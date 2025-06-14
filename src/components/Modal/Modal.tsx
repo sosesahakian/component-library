@@ -1,64 +1,56 @@
-import * as React from "react";
-import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { XIcon } from "lucide-react";
-import FocusTrap from "focus-trap-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@/lib/utils";
+import React from "react";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+  DialogClose,
+} from "../ui/dialog";
 
-// ✅ KEEP overlay as-is
-function DialogOverlay({
-  className,
-  ...props
-}: React.ComponentProps<typeof DialogPrimitive.Overlay>) {
-  return (
-    <DialogPrimitive.Overlay
-      className={cn(
-        "fixed inset-0 bg-black/50 z-50 data-[state=open]:animate-in data-[state=closed]:animate-out",
-        className
-      )}
-      {...props}
-    />
-  );
-}
-
-// ✅ NEW: combine your framer-motion + FocusTrap inside Content
-function DialogContent({
-  className,
-  children,
-  showCloseButton = true,
-  ...props
-}: React.ComponentProps<typeof DialogPrimitive.Content> & {
+type ModalProps = {
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
+  title?: React.ReactNode;
+  description?: React.ReactNode;
+  children: React.ReactNode;
+  trigger?: React.ReactNode;
   showCloseButton?: boolean;
-}) {
-  return (
-    <DialogPrimitive.Portal>
-      <DialogOverlay />
-      <AnimatePresence>
-        <DialogPrimitive.Content asChild forceMount>
-          <FocusTrap focusTrapOptions={{ allowOutsideClick: true }}>
-            <motion.div
-              className={cn(
-                "fixed top-1/2 left-1/2 z-50 w-full max-w-[calc(100%-2rem)] sm:max-w-lg translate-x-[-50%] translate-y-[-50%] rounded-lg bg-white p-6 shadow-xl",
-                className
-              )}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.2 }}
-              {...props}
-            >
-              {children}
+  footer?: React.ReactNode;
+};
 
-              {showCloseButton && (
-                <DialogPrimitive.Close className="absolute top-4 right-4 opacity-70 hover:opacity-100">
-                  <XIcon />
-                  <span className="sr-only">Close</span>
-                </DialogPrimitive.Close>
-              )}
-            </motion.div>
-          </FocusTrap>
-        </DialogPrimitive.Content>
-      </AnimatePresence>
-    </DialogPrimitive.Portal>
+export function Modal({
+  open,
+  onOpenChange,
+  title,
+  description,
+  children,
+  trigger,
+  showCloseButton = true,
+  footer,
+}: ModalProps) {
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      {trigger && <DialogTrigger>{trigger}</DialogTrigger>}
+
+      <DialogContent showCloseButton={showCloseButton}>
+        {(title || description) && (
+          <DialogHeader>
+            {title && <DialogTitle>{title}</DialogTitle>}
+            {description && (
+              <DialogDescription>{description}</DialogDescription>
+            )}
+          </DialogHeader>
+        )}
+
+        <div>{children}</div>
+
+        {footer && <DialogFooter>{footer}</DialogFooter>}
+
+        {showCloseButton && <DialogClose />}
+      </DialogContent>
+    </Dialog>
   );
 }

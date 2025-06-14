@@ -1,30 +1,29 @@
-import { useModal } from "../hooks/useModal";
+import React from "react";
 import { Modal } from "../components/Modal/Modal";
-import type { Meta } from "@storybook/react";
+
+import { useModal } from "../hooks/useModal";
 
 export default {
   title: "Components/Modal",
   component: Modal,
-} satisfies Meta<typeof Modal>;
+};
 
 export const Default = () => {
   const { isOpen, openModal, closeModal } = useModal();
 
   return (
-    <div>
-      <button onClick={openModal} className="btn">
-        Open Modal
-      </button>
-
-      {isOpen && (
-        <Modal isOpen={isOpen} onClose={closeModal}>
-          <h2 className="text-xl font-semibold mb-4">Modal Title</h2>
-          <p>This is a modal shown through the useModal hook.</p>
-          <button onClick={closeModal} className="mt-4 btn">
-            Close
-          </button>
-        </Modal>
-      )}
-    </div>
+    <>
+      <button onClick={openModal}>Open Modal</button>
+      <Modal
+        open={isOpen}
+        onOpenChange={closeModal}
+        title="Modal Title"
+        description="This is a description"
+        showCloseButton
+        footer={<button onClick={closeModal}>Close</button>}
+      >
+        <p>Modal content here</p>
+      </Modal>
+    </>
   );
 };
