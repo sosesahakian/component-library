@@ -1,10 +1,10 @@
-import React from "react";
 import { Modal } from "../components/Modal/Modal";
 
 import { useModal } from "../hooks/useModal";
 
 export default {
   title: "Components/Modal",
+  tags: ["autodocs"],
   component: Modal,
 };
 
