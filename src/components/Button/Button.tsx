@@ -1,21 +1,19 @@
-import type { VariantProps } from "class-variance-authority"; // if using cva()
+import type { VariantProps } from "class-variance-authority";
 import { Button as ShadcnButton } from "../ui/button";
 import { cn } from "@/utils/cn";
 import React from "react";
-// Get the allowed size type directly from ShadcnButton
 type ShadcnSize = VariantProps<typeof ShadcnButton>["size"];
 
-// Your props remain the same
 export interface ButtonProps {
   primary?: boolean;
   backgroundColor?: string;
+  textColor?: string;
   size?: "small" | "medium" | "large";
   label: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   disabled?: boolean;
 }
 
-// Tell TS exactly what the mapping produces:
 const sizeMap: Record<
   NonNullable<ButtonProps["size"]>,
   Extract<ShadcnSize, string>
@@ -30,6 +28,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     {
       primary = false,
       backgroundColor,
+      textColor,
       size = "medium",
       label,
       disabled = false,
@@ -48,7 +47,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         variant={variant}
         size={shadcnSize}
         className={cn(backgroundColor ? "" : undefined)}
-        style={backgroundColor ? { backgroundColor } : undefined}
+        style={{
+          backgroundColor: backgroundColor || undefined,
+          color: textColor || undefined,
+        }}
         disabled={disabled}
         onClick={disabled ? undefined : onClick}
         {...props}
