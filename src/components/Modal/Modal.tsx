@@ -32,7 +32,7 @@ export function Modal({
   footer,
 }: ModalProps) {
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={open} onOpenChange={onOpenChange} className=" bg-white">
       {trigger && <DialogTrigger>{trigger}</DialogTrigger>}
 
       <DialogContent showCloseButton={showCloseButton}>

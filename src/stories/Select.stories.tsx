@@ -26,7 +26,7 @@ export const Default = () => {
         onChange={setValue}
         placeholder="Select an option"
       />
-      <p>Selected: {value ?? "none"}</p>
+      {/* <p>Selected: {value ?? "none"}</p> */}
     </div>
   );
 };
@@ -43,7 +43,6 @@ export const SmallSize = () => {
         placeholder="Choose..."
         size="sm"
       />
-      <p>Selected: {value ?? "none"}</p>
     </div>
   );
 };
@@ -64,7 +63,6 @@ export const WithoutGroups = () => {
         onChange={setValue}
         placeholder="Select item"
       />
-      <p>Selected: {value ?? "none"}</p>
     </div>
   );
 };
