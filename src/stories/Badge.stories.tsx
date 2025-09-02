@@ -40,9 +40,9 @@ export const Outline: Story = {
   },
 };
 
-export const CustomClass: Story = {
+export const Big: Story = {
   args: {
-    children: "Custom Class",
-    className: "bg-green-500 text-white",
+    children: "Big Badge",
+    size: "big",
   },
 };
