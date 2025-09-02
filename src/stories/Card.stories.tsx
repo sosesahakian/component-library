@@ -28,6 +28,7 @@ export const Default: Story = {
         <CardTitle>Card Title</CardTitle>
         <CardDescription>This is a card description.</CardDescription>
       </CardHeader>
+
       <CardContent>
         <p>This is the main content of the card. You can put anything here.</p>
       </CardContent>

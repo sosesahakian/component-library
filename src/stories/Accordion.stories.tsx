@@ -21,7 +21,7 @@ type Story = StoryObj<typeof Accordion>;
 
 export const Default: Story = {
   render: (args) => (
-    <Accordion {...args}>
+    <Accordion type="single" collapsible {...{ ...args, type: undefined }}>
       <AccordionItem value="item-1">
         <AccordionTrigger>What is your refund policy?</AccordionTrigger>
         <AccordionContent>
