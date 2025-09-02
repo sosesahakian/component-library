@@ -37,7 +37,7 @@ export const Input = ({
         <ShadcnInput
           id={inputId}
           name={name}
-          placeholder={placeholder}
+          placeholder={focused ? placeholder : ""}
           value={value}
           onChange={onChange}
           disabled={disabled}
@@ -47,10 +47,8 @@ export const Input = ({
             onChange?.(e);
           }}
           className={cn(
-            "peer block w-full appearance-none rounded-md border-2 bg-gray-50 px-3 pt-6 pb-2 text-sm placeholder-transparent transition-all",
-            error
-              ? "border-red-500"
-              : "border-gray-300 focus:border-indigo-500",
+            "peer block w-full appearance-none rounded-md border-2 bg-white px-3 pt-6 pb-2 text-sm placeholder-transparent transition-all",
+            error ? "border-red-500" : "border-gray-300 focus:border-gray-500",
             disabled && "bg-gray-100 text-gray-400 cursor-not-allowed"
           )}
         />
@@ -58,10 +56,8 @@ export const Input = ({
           <label
             htmlFor={inputId}
             className={cn(
-              "absolute left-3 top-2 text-sm text-indigo-500 transition-all px-1 bg-gray-50",
-              focused || value
-                ? "scale-90 -translate-y-2.5"
-                : "translate-y-3 scale-100"
+              "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-sm text-gray-900 transition-all px-1 bg-white",
+              focused || value ? "scale-90 -translate-y-6" : "scale-100"
             )}
           >
             {label}
@@ -87,6 +83,7 @@ export const Input = ({
         onChange={onChange}
         disabled={disabled}
         className={cn(
+          "border border-transparent focus:border-gray-500 transition-all",
           error ? "border-red-500" : "",
           disabled && "bg-gray-100 text-gray-400 cursor-not-allowed"
         )}
