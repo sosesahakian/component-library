@@ -30,7 +30,6 @@ export function SmartSelect({
   placeholder,
   size = "default",
 }: SmartSelectProps) {
-  // Group options by their 'group' property or mark ungrouped
   const groups = options.reduce<Record<string, Option[]>>((acc, option) => {
     const key = option.group ?? "__ungrouped";
     if (!acc[key]) acc[key] = [];
