@@ -1,4 +1,4 @@
-import { Button } from "../Button/Button";
+import { Button } from "@/components/Atoms/Button/Button";
 
 type User = {
   name: string;

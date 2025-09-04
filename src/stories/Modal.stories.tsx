@@ -1,5 +1,4 @@
-import { Modal } from "../components/Modal/Modal";
-
+import { Modal } from "@/components/Organisms/Modal/Modal";
 import { useModal } from "../hooks/useModal";
 
 export default {

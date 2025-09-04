@@ -1,7 +1,6 @@
+import { Button } from "@/components/Atoms/Button/Button";
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-
-import { Button } from "../components/Button/Button";
 
 const meta: Meta<typeof Button> = {
   title: "Components/Button",

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Label as ShadcnLabel } from "../ui/label";
+import { Label as ShadcnLabel } from "../../ui/label";
 
 type LabelProps = React.ComponentProps<typeof ShadcnLabel> & {
   required?: boolean;

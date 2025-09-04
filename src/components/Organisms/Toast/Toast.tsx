@@ -1,5 +1,5 @@
 import { toast as sonnerToast, ToastOptions } from "sonner";
-import { Toaster } from "../ui/sonner";
+import { Toaster } from "../../ui/sonner";
 import React from "react";
 
 type ToastContent = React.ReactNode | string;

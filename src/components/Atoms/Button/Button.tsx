@@ -1,6 +1,6 @@
 import * as React from "react";
 import { cn } from "@/utils/cn";
-import { Button as ShadcnButton } from "../ui/button";
+import { Button as ShadcnButton } from "../../ui/button";
 
 const colorMap: Record<string, { bg: string; hover: string; text: string }> = {
   blue: { bg: "bg-blue-500", hover: "hover:bg-blue-600", text: "text-white" },

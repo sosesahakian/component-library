@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 
-import { Header } from "../components/Header/Header";
+import { Header } from "../components/Organisms/Header/Header";
 
 const meta = {
   title: "Components/Header",

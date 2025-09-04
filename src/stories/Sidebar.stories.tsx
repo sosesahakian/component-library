@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Sidebar } from "@/components/Sidebar.tsx/Sidebar";
+import { Sidebar } from "@/components/Organisms/Sidebar/Sidebar.tsx/Sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar"; // Import the provider
 
 const meta: Meta<typeof Sidebar> = {

@@ -8,7 +8,7 @@ import {
   DialogTitle,
   DialogDescription,
   DialogClose,
-} from "../ui/dialog";
+} from "../../ui/dialog";
 
 type ModalProps = {
   open?: boolean;

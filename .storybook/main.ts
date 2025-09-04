@@ -4,12 +4,15 @@ import tailwindcss from "@tailwindcss/postcss";
 import autoprefixer from "autoprefixer";
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: [
+    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../src/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+  ],
   addons: [
     "@storybook/addon-onboarding",
     "@chromatic-com/storybook",
     "@storybook/addon-vitest",
-    "@storybook/addon-docs"
+    "@storybook/addon-docs",
   ],
   framework: {
     name: "@storybook/react-vite",

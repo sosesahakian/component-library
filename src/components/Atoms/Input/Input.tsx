@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { cn } from "../../utils/cn";
-import { Input as ShadcnInput } from "../ui/input";
+import { cn } from "../../../utils/cn";
+import { Input as ShadcnInput } from "../../ui/input";
 
 interface InputProps {
   label?: string;

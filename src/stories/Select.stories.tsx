@@ -1,5 +1,5 @@
+import { SmartSelect } from "@/components/Molecules/Select/SmartSelect";
 import { useState } from "react";
-import { SmartSelect } from "../components/Select/SmartSelect";
 
 export default {
   title: "Components/SmartSelect",

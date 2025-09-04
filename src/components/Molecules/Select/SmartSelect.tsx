@@ -6,7 +6,7 @@ import {
   SelectLabel,
   SelectItem,
   SelectValue,
-} from "../ui/select";
+} from "../../ui/select";
 
 interface Option {
   label: string;

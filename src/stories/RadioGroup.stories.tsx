@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
-import { CustomRadioGroup } from "@/components/RadioGroup/RadioGroup";
+import { CustomRadioGroup } from "@/components/Molecules/RadioGroup/RadioGroup";
 
 const options = [
   { label: "Option One", value: "one" },

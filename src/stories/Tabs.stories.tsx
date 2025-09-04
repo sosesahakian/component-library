@@ -5,7 +5,7 @@ import {
   TabsList,
   TabsTrigger,
   TabsContent,
-} from "@/components/Tabs/Tabs";
+} from "@/components/Molecules/Tabs/Tabs";
 
 const meta: Meta<typeof Tabs> = {
   title: "Components/Tabs",
