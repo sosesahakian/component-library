@@ -1,10 +1,8 @@
 import React from "react";
-import { Switch } from "@/components/ui/switch";
+import { Toggle as UIToggle } from "@/components/ui/toggle";
 
-export const Toggle = () => {
-  return (
-    <div>
-      <Switch />
-    </div>
-  );
+export type ToggleProps = React.ComponentProps<typeof UIToggle>;
+
+export const Toggle = (props: ToggleProps) => {
+  return <UIToggle {...props} />;
 };

@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
+import { Bold } from "lucide-react";
 import { Toggle } from "@/components/Toggle/Toggle";
 
 const meta: Meta<typeof Toggle> = {
   title: "Components/Toggle",
   component: Toggle,
-  tags: ["autodocs"],
   parameters: {
     layout: "centered",
   },
@@ -16,42 +16,47 @@ type Story = StoryObj<typeof Toggle>;
 
 export const Default: Story = {
   args: {
-    label: "Enable notifications",
+    "aria-label": "Toggle default",
+    children: "Toggle",
+    // Do NOT pass pressed or onPressedChange here!
+  },
+};
+
+export const WithIcon: Story = {
+  args: {
+    "aria-label": "Toggle bold",
+    children: <Bold className="h-4 w-4" />,
   },
 };
 
 export const Checked: Story = {
   args: {
-    label: "Dark mode",
-    defaultChecked: true,
+    "aria-label": "Toggle checked",
+    children: "Checked",
+    defaultPressed: true,
   },
 };
 
 export const Disabled: Story = {
   args: {
-    label: "Disabled toggle",
+    "aria-label": "Toggle disabled",
+    children: "Disabled",
     disabled: true,
   },
 };
 
-export const WithLongLabel: Story = {
-  args: {
-    label: "This is a toggle with a longer label for demonstration purposes",
-  },
-};
-
-const ControlledToggle = (args: React.ComponentProps<typeof Toggle>) => {
-  const [checked, setChecked] = React.useState(false);
-  return (
-    <Toggle
-      {...args}
-      checked={checked}
-      onChange={setChecked}
-      label="Controlled toggle"
-    />
-  );
-};
-
 export const Controlled: Story = {
-  render: (args) => <ControlledToggle {...args} />,
+  render: (args) => {
+    const [pressed, setPressed] = React.useState(false);
+    return (
+      <Toggle
+        {...args}
+        pressed={pressed}
+        onPressedChange={setPressed}
+        aria-label="Controlled toggle"
+      >
+        Controlled
+      </Toggle>
+    );
+  },
 };
