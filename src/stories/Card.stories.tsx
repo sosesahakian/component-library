@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import React from "react";
 import {
   Card,
   CardHeader,
@@ -10,7 +9,7 @@ import {
 } from "@/components/Molecules/Card/Card";
 
 const meta: Meta<typeof Card> = {
-  title: "Components/Card",
+  title: "Components/Molecules/Card",
   component: Card,
   tags: ["autodocs"],
   parameters: {

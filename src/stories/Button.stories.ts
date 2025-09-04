@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 
 const meta: Meta<typeof Button> = {
-  title: "Components/Button",
+  title: "Components/Atoms/Button",
   component: Button,
   parameters: {
     layout: "centered",

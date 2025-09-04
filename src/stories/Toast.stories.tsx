@@ -1,8 +1,7 @@
-import React from "react";
 import { toast, Toaster } from "@/components/Organisms/Toast/Toast";
 
 export default {
-  title: "Components/Toast",
+  title: "Components/Organisms/Toast",
   component: Toaster,
 };
 

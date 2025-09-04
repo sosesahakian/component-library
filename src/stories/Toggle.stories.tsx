@@ -4,7 +4,7 @@ import { Bold } from "lucide-react";
 import { Toggle } from "@/components/Atoms/Toggle/Toggle";
 
 const meta: Meta<typeof Toggle> = {
-  title: "Components/Toggle",
+  title: "Components/Atoms/Toggle",
   component: Toggle,
   parameters: {
     layout: "centered",
@@ -47,16 +47,19 @@ export const Disabled: Story = {
 
 export const Controlled: Story = {
   render: (args) => {
-    const [pressed, setPressed] = React.useState(false);
-    return (
-      <Toggle
-        {...args}
-        pressed={pressed}
-        onPressedChange={setPressed}
-        aria-label="Controlled toggle"
-      >
-        Controlled
-      </Toggle>
-    );
+    function ControlledToggle() {
+      const [pressed, setPressed] = React.useState(false);
+      return (
+        <Toggle
+          {...args}
+          pressed={pressed}
+          onPressedChange={setPressed}
+          aria-label="Controlled toggle"
+        >
+          Controlled
+        </Toggle>
+      );
+    }
+    return <ControlledToggle />;
   },
 };

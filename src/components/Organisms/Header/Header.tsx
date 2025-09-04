@@ -15,6 +15,15 @@ export interface HeaderProps {
   buttonTextColor?: string;
 }
 
+export interface ButtonProps {
+  label: string;
+  onClick?: () => void;
+  size?: "small" | "medium" | "large";
+  primary?: boolean;
+  textColor?: string;
+  backgroundColor?: string; // Ensure this property is included
+}
+
 export const Header = ({
   user,
   onLogin,

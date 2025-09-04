@@ -3,7 +3,7 @@ import { Sidebar } from "@/components/Organisms/Sidebar/Sidebar.tsx/Sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar"; // Import the provider
 
 const meta: Meta<typeof Sidebar> = {
-  title: "Components/Sidebar",
+  title: "Components/Organisms/Sidebar",
   component: Sidebar,
   tags: ["autodocs"],
   parameters: {

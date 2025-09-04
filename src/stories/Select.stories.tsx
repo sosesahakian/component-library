@@ -2,7 +2,7 @@ import { SmartSelect } from "@/components/Molecules/Select/SmartSelect";
 import { useState } from "react";
 
 export default {
-  title: "Components/SmartSelect",
+  title: "Components/Molecules/SmartSelect",
   tags: ["autodocs"],
   component: SmartSelect,
 };

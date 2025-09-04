@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import React from "react";
 import {
   Accordion,
   AccordionItem,
@@ -8,7 +7,7 @@ import {
 } from "@/components/Molecules/Accordion/Accordion";
 
 const meta: Meta<typeof Accordion> = {
-  title: "Components/Accordion",
+  title: "Components/Molecules/Accordion",
   component: Accordion,
   tags: ["autodocs"],
   parameters: {
@@ -20,8 +19,12 @@ export default meta;
 type Story = StoryObj<typeof Accordion>;
 
 export const Default: Story = {
-  render: (args) => (
-    <Accordion type="single" collapsible {...{ ...args, type: undefined }}>
+  render: ({ ...args }) => (
+    <Accordion
+      type="single"
+      collapsible
+      {...(args as { value?: string; defaultValue?: string })}
+    >
       <AccordionItem value="item-1">
         <AccordionTrigger>What is your refund policy?</AccordionTrigger>
         <AccordionContent>

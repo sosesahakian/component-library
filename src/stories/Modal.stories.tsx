@@ -2,7 +2,7 @@ import { Modal } from "@/components/Organisms/Modal/Modal";
 import { useModal } from "../hooks/useModal";
 
 export default {
-  title: "Components/Modal",
+  title: "Components/Organisms/Modal",
   tags: ["autodocs"],
   component: Modal,
 };

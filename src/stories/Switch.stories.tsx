@@ -4,7 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/Atoms/Switch/Switch";
 
 const meta: Meta<typeof Switch> = {
-  title: "Components/Switch",
+  title: "Components/Molecules/Switch",
   component: Switch,
   parameters: {
     layout: "centered",
@@ -34,18 +34,20 @@ export const Disabled: Story = {
   },
 };
 
+const ControlledSwitch: React.FC = (args) => {
+  const [checked, setChecked] = React.useState(false);
+  return (
+    <Switch
+      {...args}
+      checked={checked}
+      onCheckedChange={setChecked}
+      aria-label="Controlled switch"
+    />
+  );
+};
+
 export const Controlled: Story = {
-  render: (args) => {
-    const [checked, setChecked] = React.useState(false);
-    return (
-      <Switch
-        {...args}
-        checked={checked}
-        onCheckedChange={setChecked}
-        aria-label="Controlled switch"
-      />
-    );
-  },
+  render: (args) => <ControlledSwitch {...args} />,
 };
 
 export const WithLabel: Story = {

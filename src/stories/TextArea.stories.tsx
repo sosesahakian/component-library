@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 
 const meta: Meta<typeof Textarea> = {
-  title: "Components/Textarea",
+  title: "Components/Atoms/Textarea",
   component: Textarea,
   tags: ["autodocs"],
   parameters: {

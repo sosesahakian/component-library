@@ -1,17 +1,19 @@
-import { toast as sonnerToast, ToastOptions } from "sonner";
+import { toast as sonnerToast } from "sonner";
 import { Toaster } from "../../ui/sonner";
 import React from "react";
 
 type ToastContent = React.ReactNode | string;
 
-interface CustomToastOptions extends ToastOptions {
+interface CustomToastOptions {
+  duration?: number;
   closeable?: boolean;
+  [key: string]: unknown;
 }
 
 export function toast(content: ToastContent, options?: CustomToastOptions) {
   if (options?.closeable) {
     return sonnerToast(
-      (t) => (
+      () => (
         <div
           style={{
             display: "flex",
@@ -20,7 +22,7 @@ export function toast(content: ToastContent, options?: CustomToastOptions) {
           }}
         >
           <span>{content}</span>
-          <button onClick={() => sonnerToast.dismiss(t)} aria-label="Close">
+          <button onClick={() => sonnerToast.dismiss()} aria-label="Close">
             ×
           </button>
         </div>

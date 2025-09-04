@@ -9,7 +9,7 @@ const options = [
 ];
 
 const meta: Meta<typeof CustomRadioGroup> = {
-  title: "Components/RadioGroup",
+  title: "Components/Molecules/RadioGroup",
   component: CustomRadioGroup,
   tags: ["autodocs"],
   parameters: {

@@ -64,4 +64,11 @@ import {
   TooltipContent as TooltipContentComponent,
 } from "@/components/ui/tooltip";
 
-export { TooltipComponent, TooltipTriggerComponent, TooltipContentComponent };
+export {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+  TooltipComponent,
+  TooltipTriggerComponent,
+  TooltipContentComponent,
+};

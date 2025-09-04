@@ -4,7 +4,7 @@ import { fn } from "@storybook/test";
 import { Header } from "../components/Organisms/Header/Header";
 
 const meta = {
-  title: "Components/Header",
+  title: "Components/Organisms/Header",
   component: Header,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ["autodocs"],
